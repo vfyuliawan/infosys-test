@@ -1,5 +1,5 @@
-import logo from './assets/img/logo.png';
-import header from './assets/img/header-login.png'
+import logo from '../assets/img/logo.png';
+import header from '../assets/img/header-login.png'
 // import './App.css';
 import Swal from 'sweetalert2'
 
@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 
 import React, {useState} from 'react'
 
-function App() {
+function Login() {
 
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -49,6 +49,7 @@ function App() {
       }else{
         const result = await response.json()
         console.log(result.firstName)
+        window.location.href = '/home'
         swallSuccess(result.firstName);
       }
       
@@ -125,4 +126,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
